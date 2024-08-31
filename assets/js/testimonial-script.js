@@ -19,6 +19,28 @@ var db = firebase.firestore();
 // Function to load and display data
 
 function loadData() {
+  db.collection("gallery")
+    .get() // Replace with your Firestore collection name
+    .then((querySnapshot) => {
+      const data = [];
+      querySnapshot.forEach((doc) => {
+        data.push(doc.data()); // Add document data to the array
+      });
+
+      const data1 = data.filter((item) => item.categoryName === "1").slice(-8);
+      const data2 = data.filter((item) => item.categoryName === "2").slice(-8);
+      const data3 = data.filter((item) => item.categoryName === "3").slice(-8);
+      const data4 = data.filter((item) => item.categoryName === "4").slice(-8);
+
+      renderData(data1, "gallery-section-one"); // Call the render function
+      renderData(data2, "gallery-section-two"); // Call the render function
+      renderData(data3, "gallery-section-three");
+      renderData(data4, "gallery-section-four");
+    })
+    .catch((error) => {
+      console.error("Error fetching data: ", error);
+    });
+
   db.collection("testimonials")
     .get() // Replace with your Firestore collection name
     .then((querySnapshot) => {
@@ -27,7 +49,7 @@ function loadData() {
         data.push(doc.data()); // Add document data to the array
       });
 
-      renderData(data); // Call the render function
+      renderDataTestimonials(data); // Call the render function
     })
     .catch((error) => {
       console.error("Error fetching data: ", error);
@@ -35,7 +57,7 @@ function loadData() {
 }
 
 // Function to render data with a heading
-function renderData(data) {
+function renderDataTestimonials(data) {
   const container = document.getElementById("testimonial-sectionA");
 
   // Render each item
@@ -57,6 +79,34 @@ function renderData(data) {
     container.appendChild(listItem);
   });
 }
+function renderData(data, parentDiv) {
+  const container = document.getElementById(parentDiv);
 
+  // Render each item
+  data.forEach((item) => {
+    const listItem = document.createElement("div");
+    listItem.classList.add("col-lg-3", "col-md-6", "col-sm-6");
+    listItem.innerHTML = `
+
+    <div class="gallery-box">
+      <div class="single-gallery">
+        <div
+          class="gallery-img smoll-img"
+          style="
+            background-image: url(${item.imageUrl});
+          "
+        ></div>
+        <div class="g-caption">
+          <span>$25</span>
+          <h4>${item.heading}</h4>
+          <p>Ut enim ad minim veniam quis nostr.</p>
+          <a href="#" class="btn order-btn">Order Now</a>
+        </div>
+      </div>
+    </div>
+          `;
+    container.appendChild(listItem);
+  });
+}
 // Load data when the page loads
 window.onload = loadData;
