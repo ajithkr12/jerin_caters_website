@@ -50,6 +50,7 @@ function loadData() {
       });
 
       renderDataTestimonials(data); // Call the render function
+      initializeOwlCarousel(); // Reinitialize the carousel after rendering
     })
     .catch((error) => {
       console.error("Error fetching data: ", error);
@@ -58,24 +59,47 @@ function loadData() {
 
 // Function to render data with a heading
 function renderDataTestimonials(data) {
-  const container = document.getElementById("testimonial-sectionA");
+  const container = document.getElementById("testimonial-section");
 
   // Render each item
   data.forEach((item) => {
     const listItem = document.createElement("div");
-    listItem.classList.add("snip1192");
+    listItem.classList.add(
+      "item",
+      "p-2",
+      "bg-white",
+      "shadow-sm",
+      "m-4",
+      "border-radius-new"
+    );
     listItem.innerHTML = `
+    
+    <img
+    src="https://annedece.sirv.com/Images/commos.png"
+    class="pb-4 comms"
+  />
+  <p class="text-muted">
+  ${item.content}
+  </p>
 
-    <blockquote>${item.content}</blockquote>
-    <div class="author">
+  <hr class="m-1" />
+  <div class="d-flex align-items-center pt-3">
+    <div class="author-img mr-3">
       <img
-        src=${item.imageUrl}
-        alt="sq-sample29"
+        src= ${item.imageUrl}
       />
-      <h5>${item.name}<span>${item.companyName}-${item.companyName}</span></h5>
     </div>
-
-          `;
+    <div>
+      <h5 class="m-0">${item.name}</h5>
+      <p class="m-0 small font-medium text-muted">
+        ${item.companyName} -  ${item.position}
+      </p>
+    </div>
+  </div>
+    
+    
+    
+    `;
     container.appendChild(listItem);
   });
 }
@@ -110,3 +134,27 @@ function renderData(data, parentDiv) {
 }
 // Load data when the page loads
 window.onload = loadData;
+
+function initializeOwlCarousel() {
+  // Reinitialize the Owl Carousel
+  $(".owl-carousel").owlCarousel({
+    items: 2,
+    margin: 10,
+    loop: true,
+    nav: false,
+    autoplay: true,
+    responsive: {
+      0: {
+        items: 1,
+        autoplay: true,
+      },
+      600: {
+        items: 2,
+        autoplay: true,
+      },
+      1000: {
+        items: 2,
+      },
+    },
+  });
+}

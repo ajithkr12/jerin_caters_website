@@ -5696,3 +5696,23 @@ figure.snip1192 .author h5 span {
 .menu-area .single-menu:hover .menu-cap span {
   color: #fff;
 }
+
+.owl-carousel .owl-item img {
+  display: inline-block !important;
+  width: auto;
+}
+.author-img img {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 100%;
+}
+.font-medium {
+  font-weight: 500;
+}
+.border-radius-new {
+  border-radius: 20px;
+}
+img.comms {
+  width: 40px !important;
+  height: auto;
+}
