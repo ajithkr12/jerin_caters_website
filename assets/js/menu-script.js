@@ -28,12 +28,18 @@ function loadData() {
       });
 
       const data1 = data.filter((item) => item.categoryName === "SOUTH_INDIAN");
-      const data2 = data.filter((item) => item.categoryName === "CHINESE");
-      const data3 = data.filter((item) => item.categoryName === "ARABIAN");
+      const data2 = data.filter((item) => item.categoryName === "NORTH_INDIAN");
+      const data3 = data.filter((item) => item.categoryName === "CHINESE");
+      const data4 = data.filter((item) => item.categoryName === "SALADS");
+      const data5 = data.filter(
+        (item) => item.categoryName === "LIVE_STATIONS"
+      );
 
       renderData(data1, "South Indian"); // Call the render function
-      renderData(data2, "Chinese"); // Call the render function
-      renderData(data1, "Arabian");
+      renderData(data2, "North Indian"); // Call the render function
+      renderData(data3, "Chinese"); // Call the render function
+      renderData(data4, "Salads"); // Call the render function
+      renderData(data5, "Live Stations");
     })
     .catch((error) => {
       console.error("Error fetching data: ", error);
