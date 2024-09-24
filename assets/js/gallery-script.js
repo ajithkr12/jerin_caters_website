@@ -60,12 +60,6 @@ function renderData(data, parentDiv) {
             background-image: url(${item.imageUrl});
           "
         ></div>
-        // <div class="g-caption">
-        //   <span>$25</span>
-        //   <h4>${item.heading}</h4>
-        //   <p>Ut enim ad minim veniam quis nostr.</p>
-        //   <a href="#" class="btn order-btn">Order Now</a>
-        // </div>
       </div>
     </div>
           `;
