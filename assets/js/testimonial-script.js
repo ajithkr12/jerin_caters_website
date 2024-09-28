@@ -88,8 +88,8 @@ function renderDataTestimonials(data) {
     </div>
     <div>
       <h5 class="m-0">${item.name}</h5>
-      <p class="m-0 small font-medium text-muted">
-        ${item.companyName} -  ${item.position}
+       <p class="m-0 small font-medium text-muted">
+          ${item.position}
       </p>
     </div>
   </div>
