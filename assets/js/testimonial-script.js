@@ -86,8 +86,8 @@ function renderDataTestimonials(data) {
         src= ${item.imageUrl}
       />
     </div>
-    <div>
-      <h5 class="m-0">${item.name}</h5>
+    <div class="d-flex flex-column align-items-start">
+    <h5 class="m-0">${item.name}</h5>
        <p class="m-0 small font-medium text-muted">
           ${item.position}
       </p>
@@ -118,10 +118,6 @@ function renderData(data, parentDiv) {
           "
         ></div>
         <div class="g-caption">
-          <span>$25</span>
-          <h4>${item.heading}</h4>
-          <p>Ut enim ad minim veniam quis nostr.</p>
-          <a href="#" class="btn order-btn">Order Now</a>
         </div>
       </div>
     </div>

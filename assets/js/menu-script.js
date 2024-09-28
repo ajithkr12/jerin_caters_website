@@ -62,25 +62,23 @@ function renderData(data, heading) {
   // Render each item
   data.forEach((item) => {
     const listItem = document.createElement("div");
-    listItem.classList.add("col-lg-4", "col-md-6");
-    listItem.innerHTML = `
+    listItem.classList.add("col-lg-4", "col-md-6", "mb-4");
 
-            <div class="single-menu mb-100">
-            <div class="menu-img">
-              <img src="${item.imageUrl}" alt="" />
-            </div>
-            <div class="menu-cap">
-              <h4>
-                <a href="blog_details.html">${item.heading}</a>
-              </h4>
-              <p class="color1">${item.content}</p>
-            </div>
-          </div>
+    listItem.innerHTML = `<article class="card">
+        <img
+          class="card__background"
+          src="${item.imageUrl}"
+          alt="Photo of food"
+          width="1920"
+          height="2193"
+        />
+        <div class="card__content | flow">
+          <div class="card__content--container | flow">
+            <h2 class="card__title">${item.heading}</h2>
+            <p class="card__description">${item.content}</p>
+          
+      </article>`;
 
-
-
-
-          `;
     container.appendChild(listItem);
   });
 }
