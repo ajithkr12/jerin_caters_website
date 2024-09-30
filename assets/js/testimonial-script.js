@@ -34,9 +34,7 @@ function loadData() {
       renderData(data3, "gallery-section-three");
       renderData(data4, "gallery-section-four");
     })
-    .catch((error) => {
-      console.error("Error fetching data: ", error);
-    });
+    .catch((error) => {});
 
   db.collection("testimonials")
     .get() // Replace with your Firestore collection name
