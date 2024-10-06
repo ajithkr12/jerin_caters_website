@@ -150,7 +150,7 @@ svg {
 }
 .slide:nth-child(1) .slide__bg {
   left: 0;
-  background-image: url(../img/hero/h1_hero.png);
+  background-image: url(../img/hero/hero_1.png);
 }
 .slide:nth-child(1) .slide__overlay-path {
   fill: #303030;
@@ -165,7 +165,7 @@ svg {
 }
 .slide:nth-child(2) .slide__bg {
   left: -50%;
-  background-image: url(../img/hero/hero2.png);
+  background-image: url(../img/hero/hero_1.png);
 }
 .slide:nth-child(2) .slide__overlay-path {
   fill: #303030;
@@ -180,11 +180,27 @@ svg {
 }
 .slide:nth-child(3) .slide__bg {
   left: -100%;
-  background-image: url(../img/hero/h1_hero.png);
+  background-image: url(../img/hero/hero_1.png);
 }
 .slide:nth-child(3) .slide__overlay-path {
   fill: #303030;
 }
+
+@media (max-width: 991px) {
+  .slide:nth-child(1) .slide__bg {
+    background-image: url(../img/hero/hero_mobile_1.png);
+  }
+  .slide:nth-child(2) .slide__bg {
+    background-image: url(../img/hero/hero_mobile_2.png);
+  }
+  .slide:nth-child(3) .slide__bg {
+    background-image: url(../img/hero/hero_mobile_3.png);
+  }
+  .slide:nth-child(4) .slide__bg {
+    background-image: url(../img/hero/hero_mobile_4.png);
+  }
+}
+
 @media (max-width: 991px) {
   .slide:nth-child(3) .slide__text {
     background-color: #303030;
@@ -195,7 +211,7 @@ svg {
 }
 .slide:nth-child(4) .slide__bg {
   left: -150%;
-  background-image: url(../img/hero/h1_hero.png);
+  background-image: url(../img/hero/hero_1.png);
 }
 .slide:nth-child(4) .slide__overlay-path {
   fill: #303030;
