@@ -6,7 +6,6 @@
     <title>Jerin Caters & Events</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="manifest" href="site.webmanifest" />
     <link
       rel="shortcut icon"
       type="image/x-icon"
@@ -102,9 +101,7 @@
                 <!-- Section Tittle -->
                 <div class="section-tittle text-center mb-70">
                   <span>Our Event Gallery</span>
-                  <h2>
-                    A Showcase of Memorable and Exquisite Moments
-                    </h2>
+                  <h2>A Showcase of Memorable and Exquisite Moments</h2>
                 </div>
               </div>
             </div>
@@ -132,7 +129,7 @@
                       aria-controls="nav-profile"
                       aria-selected="false"
                     >
-                    Corporate</a
+                      Corporate</a
                     >
                     <a
                       class="nav-item nav-link"
@@ -143,7 +140,7 @@
                       aria-controls="nav-contact"
                       aria-selected="false"
                     >
-                    Private
+                      Private
                     </a>
                     <a
                       class="nav-item nav-link"
@@ -154,7 +151,7 @@
                       aria-controls="nav-dinner"
                       aria-selected="false"
                     >
-                    Culinary
+                      Culinary
                     </a>
                   </div>
                 </nav>
@@ -239,7 +236,11 @@
                     <ul>
                       <li><a href="#">Home</a></li>
                       <li><a href="gallery.html">Events</a></li>
-                      <li><a href="index.html#testimonial-sections">Testimonial</a></li>
+                      <li>
+                        <a href="index.html#testimonial-sections"
+                          >Testimonial</a
+                        >
+                      </li>
                       <li><a href="menu.html">Menu</a></li>
                       <li><a href="contact.html">Contacts</a></li>
                     </ul>
@@ -297,11 +298,15 @@
                 <div class="footer-social f-right">
                   <span>Follow Us</span>
                   <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
-                  <a href="https://www.facebook.com/jerincatersandeventmanagement/"
+                  <a
+                    href="https://www.facebook.com/jerincatersandeventmanagement/"
                     ><i class="fab fa-facebook-f"></i
                   ></a>
                   <a href="#"><i class="fas fa-globe"></i></a>
-                  <a href="https://www.instagram.com/forka_ndspoonevents?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                  <a
+                    href="https://www.instagram.com/forka_ndspoonevents?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    ><i class="fab fa-instagram"></i
+                  ></a>
                 </div>
               </div>
             </div>
@@ -313,6 +318,18 @@
     <!-- Scroll Up -->
     <div id="back-top">
       <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal" style="display: none">
+      <button class="close" onclick="closeModal()">&times;</button>
+      <div class="modal-content">
+        <img id="modalImage" class="modal-image" src="" alt="Gallery Image" />
+        <div class="modal-navigation">
+          <button id="prevButton" onclick="changeImage(-1)">&#10094;</button>
+          <button id="nextButton" onclick="changeImage(1)">&#10095;</button>
+        </div>
+      </div>
     </div>
 
     <!-- JS here -->
@@ -345,10 +362,6 @@
     <script src="./assets/js/jquery.sticky.js"></script>
 
     <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
     <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
 
     <!-- Jquery Plugins, main Jquery -->
